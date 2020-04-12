@@ -8,6 +8,14 @@
 </head>
 
 <body BGCOLOR="FFEEEE">
-<h1> Hello  <%=request.getParameter("nom")%></h1>
+<% 
+if (request.getParameter("nom")== null){
+	%> 
+	<p> Please enter your name.</p>
+	<%
+} else {
+	%> 
+Hello <b><%= request.getParameter("nom") %></b>
+<%} %>
 </body>
 </html>

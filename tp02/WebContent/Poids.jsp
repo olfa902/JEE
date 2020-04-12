@@ -7,13 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%!Boolean r1=true; %>
-<%!int t; %>
-<%float res =Float.parseFloat("t"); %>
-<% if (r1==true) 
-   res=((62*t)-44);  
-else 
-   res=((72*t)-58);
-   %>
+ <%
+ Float t=Float.parseFloat(request.getParameter("t"));
+ String r1=request.getParameter("r1");
+ if(r1.equals("femme"))
+ {%>
+ <p>Votre poids est = <%= (62.1*t)-(44.7) %> en Kg</p>
+ <%}
+ else if(r1.equals("homme"))
+	 {%>
+        <p> Votre poids est =<%= (72.7*t)-(58) %> en Kg</p>
+       
+<%}
+%>
 </body>
 </html>
